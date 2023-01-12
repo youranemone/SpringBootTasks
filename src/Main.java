@@ -1,10 +1,23 @@
+import arifmetic.*;
+
 import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
-        //Student student = new Student("Dima", 20, 541);
-        //student.learn();
-        System.out.println("Sum between a and b: " + streamSum(10000000,1000000000));
+        double a = 4.0;
+        double b = 2.0;
+
+        Calculator calculator = new Calculator(new Adder());
+        calculator.calc(a, b);
+
+        calculator = new Calculator(new Subtractor());
+        calculator.calc(a, b);
+
+        calculator = new Calculator(new Multiplier());
+        calculator.calc(a, b);
+
+        calculator = new Calculator(new Divider());
+        calculator.calc(a, b);
     }
 
     public static long streamSum (int a, int b){
